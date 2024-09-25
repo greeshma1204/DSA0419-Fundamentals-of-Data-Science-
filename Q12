@@ -1,0 +1,46 @@
+import matplotlib.pyplot as plt
+
+# Example monthly temperature data (in Celsius)
+months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+temperature = [5, 7, 10, 15, 20, 25, 30, 28, 24, 18, 12, 6]
+
+# Create a line plot for temperature
+plt.figure(figsize=(10, 5))
+plt.plot(months, temperature, marker='o', linestyle='-', color='blue')
+
+# Add title and labels
+plt.title('Monthly Temperature Data - Line Plot')
+plt.xlabel('Month')
+plt.ylabel('Temperature (°C)')
+
+# Show the plot
+plt.xticks(rotation=45)  # Rotate month labels for better readability
+plt.tight_layout()
+plt.grid(True)
+plt.show()
+
+
+
+# Example monthly rainfall data (in mm)
+rainfall = [70, 50, 60, 80, 100, 150, 200, 180, 120, 90, 60, 50]
+
+# Create a scatter plot for rainfall
+plt.figure(figsize=(10, 5))
+plt.scatter(months, rainfall, color='green', marker='o')
+
+# Add title and labels
+plt.title('Monthly Rainfall Data - Scatter Plot')
+plt.xlabel('Month')
+plt.ylabel('Rainfall (mm)')
+
+# Show the plot
+plt.xticks(rotation=45)  # Rotate month labels for better readability
+plt.tight_layout()
+plt.grid(True)
+plt.show()
+
+
+
+
+
+
