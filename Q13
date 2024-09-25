@@ -1,0 +1,25 @@
+import string
+from collections import Counter
+# Function to process the text and calculate word frequency
+def calculate_word_frequency(file_path):
+    # Step 1: Read the text file
+    with open(file_path, 'r') as file:
+        text = file.read()
+    
+    # Step 2: Convert text to lowercase and remove punctuation
+    text = text.lower()  # Convert to lowercase
+    text = text.translate(str.maketrans('', '', string.punctuation))  # Remove punctuation
+    
+    # Step 3: Split the text into words
+    words = text.split()
+    
+    # Step 4: Calculate word frequency using Counter
+    word_count = Counter(words)
+    
+    # Step 5: Display the frequency distribution
+    for word, count in word_count.items():
+        print(f'{word}: {count}')
+
+# Example usage
+file_path = 'sample_text.txt'  # Replace with the path to your text file
+calculate_word_frequency(file_path)
