@@ -1,0 +1,70 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import scipy.stats as stats
+
+# Sample data: Age and %Fat of 18 adults
+data = {
+    "Age": [23, 45, 34, 65, 27, 56, 37, 43, 29, 58, 32, 41, 40, 46, 38, 35, 52, 49],
+    "%Fat": [12.5, 25.6, 20.4, 32.5, 18.3, 27.1, 21.7, 23.5, 19.2, 29.4, 22.1, 24.9, 23.2, 26.5, 21.9, 20.8, 28.0, 25.3]
+}
+
+# Create a DataFrame
+df = pd.DataFrame(data)
+
+# Calculate mean, median, and standard deviation
+mean_age = df["Age"].mean()
+median_age = df["Age"].median()
+std_age = df["Age"].std()
+
+mean_fat = df["%Fat"].mean()
+median_fat = df["%Fat"].median()
+std_fat = df["%Fat"].std()
+
+print("Age - Mean:", mean_age, "Median:", median_age, "Standard Deviation:", std_age)
+print("%Fat - Mean:", mean_fat, "Median:", median_fat, "Standard Deviation:", std_fat)
+
+# Boxplots for Age and %Fat
+plt.figure(figsize=(10, 5))
+
+# Boxplot for Age
+plt.subplot(1, 2, 1)
+sns.boxplot(df["Age"])
+plt.title("Boxplot of Age")
+
+# Boxplot for %Fat
+plt.subplot(1, 2, 2)
+sns.boxplot(df["%Fat"])
+plt.title("Boxplot of %Fat")
+
+plt.tight_layout()
+plt.show()
+
+# Scatter plot of Age vs %Fat
+plt.figure(figsize=(6, 6))
+plt.scatter(df["Age"], df["%Fat"], color='blue')
+plt.title("Scatter Plot of Age vs %Fat")
+plt.xlabel("Age")
+plt.ylabel("%Fat")
+plt.show()
+
+# Q-Q plot for Age and %Fat
+plt.figure(figsize=(12, 6))
+
+# Q-Q plot for Age
+plt.subplot(1, 2, 1)
+stats.probplot(df["Age"], dist="norm", plot=plt)
+plt.title("Q-Q Plot of Age")
+
+# Q-Q plot for %Fat
+plt.subplot(1, 2, 2)
+stats.probplot(df["%Fat"], dist="norm", plot=plt)
+plt.title("Q-Q Plot of %Fat")
+
+plt.tight_layout()
+plt.show()
+
+
+
+
