@@ -1,0 +1,49 @@
+import matplotlib.pyplot as plt
+
+# Example sales data (days of the month and sales values)
+days = [1, 5, 10, 15, 20, 25, 30]
+sales = [200, 400, 300, 500, 700, 600, 800]
+
+# Create a line plot
+plt.figure(figsize=(8, 5))
+plt.plot(days, sales, marker='o', linestyle='-', color='blue')
+
+# Add title and labels
+plt.title('Sales Over Time - Line Plot')
+plt.xlabel('Day of the Month')
+plt.ylabel('Sales ($)')
+
+# Show the plot
+plt.grid(True)
+plt.show()
+
+# Create a scatter plot
+plt.figure(figsize=(8, 5))
+plt.scatter(days, sales, color='red', marker='x')
+
+# Add title and labels
+plt.title('Sales Over Time - Scatter Plot')
+plt.xlabel('Day of the Month')
+plt.ylabel('Sales ($)')
+
+# Show the plot
+plt.grid(True)
+plt.show()
+
+# Create a bar plot
+plt.figure(figsize=(8, 5))
+plt.bar(days, sales, color='green')
+
+# Add title and labels
+plt.title('Sales Over Time - Bar Plot')
+plt.xlabel('Day of the Month')
+plt.ylabel('Sales ($)')
+
+# Show the plot
+plt.grid(True)
+plt.show()
+
+
+
+
+
