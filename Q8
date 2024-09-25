@@ -1,0 +1,28 @@
+import pandas as pd
+
+# Example sales data for the past month
+data = {
+    'product_name': ['Product A', 'Product B', 'Product A', 'Product C', 'Product B', 'Product A', 'Product D'],
+    'quantity_sold': [10, 5, 20, 3, 7, 15, 8]
+}
+
+# Create a DataFrame
+sales_data = pd.DataFrame(data)
+
+# Step 1: Group by product name and sum the quantity sold for each product
+total_sales_per_product = sales_data.groupby('product_name')['quantity_sold'].sum()
+
+# Step 2: Sort products by total quantity sold in descending order
+top_products = total_sales_per_product.sort_values(ascending=False)
+
+# Step 3: Select the top 5 products
+top_5_products = top_products.head(5)
+
+# Display the top 5 products
+print("Top 5 products sold the most:")
+print(top_5_products)
+
+
+
+
+
