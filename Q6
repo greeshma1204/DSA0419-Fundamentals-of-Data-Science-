@@ -1,0 +1,25 @@
+import numpy as np
+
+# Define the item prices and quantities
+item_prices = np.array([10.0, 5.0, 20.0])  # Prices of the items
+item_quantities = np.array([2, 3, 1])      # Quantities of the items
+
+# Define the discount and tax rates
+discount_rate = 10  # 10% discount
+tax_rate = 8        # 8% tax
+
+# Step 1: Calculate total price of all items using np.sum()
+total_price = np.sum(item_prices * item_quantities)
+
+# Step 2: Apply discount
+discounted_price = total_price * (1 - discount_rate / 100)
+
+# Step 3: Apply tax
+final_price = discounted_price * (1 + tax_rate / 100)
+
+# Display the total cost
+print(f"Total price before discount: ${total_price:.2f}")
+print(f"Total price after discount: ${discounted_price:.2f}")
+print(f"Final price after applying tax: ${final_price:.2f}")
+
+
